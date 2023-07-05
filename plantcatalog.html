@@ -5,10 +5,8 @@
     </head>
     <body>
         <h2>Plant Catalog</h2>
-        <button type = "button" onclick="loadXMLDoc()">Load PLANT CATALOG</button>
-        <p id ="demo"></p>
     </body>
-
+    
     <script>
         function loadXMLDoc() {
             var xhttp = new XMLHttpRequest();
@@ -53,6 +51,7 @@
     <table class="fixed_headers">
         <thead>
           <tr>
+            <th></th>
             <th>COMMON</th>
             <th>BOTANICAL</th>
             <th>ZONE</th>
@@ -61,6 +60,7 @@
             <th>AVAILABILITY</th>
           </tr>
         </thead>
+    
         <tbody>
 
             <tr>
@@ -186,46 +186,82 @@
     body {
         font-family: Arial, sans-serif;
         margin: 20px;
+        background-image: url("floral.jpg.jpg");
     }
     
-    h1 {
+    h2 {
         text-align: center;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
     
     form {
         margin-bottom: 20px;
+        border: 2px solid rgb(8, 122, 90);
+        background-color: rgb(166, 225, 198);
+        border-radius: 4px;
+        text-align: center;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     }
     
     table {
         width: 100%;
         border-collapse: collapse;
+        background-color: #2c9624;
     }
     
     table th, table td {
         padding: 8px;
-        border: 1px solid #A6D0DD;
+        border: 1px solid;                                                                
+        font-family: 'Times New Roman', Times, serif;
     }
     
     table th {
-        background-color: #FF6969;
+        background-color: #028b46;
     }
     
+
     table tr:nth-child(even) {
-        background-color: #A6D0DD;
+        background-color: #a6ddc6;
     }
     
     table tr:hover {
-        background-color: #FFD3B0;
+        background-color: #29b772;
     }
     
     button {
-        padding: 10px 12px;
-        background-color: #45a049;
-        color: white;
-        border: none;
-        cursor: pointer;
-    }
-    
+  position: relative;
+  background-color: #4CAF50;
+  border: none;
+  font-size: 16px;
+  color: #FFFFFF;
+  padding: 10px;
+  width: 100px;
+  text-align: center;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+ button:after {
+  content: "";
+  background: #f1f1f1;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+ button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
     button:hover {
         background-color: #45a049;
     }
